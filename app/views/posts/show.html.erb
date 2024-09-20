@@ -1,0 +1,11 @@
+<h1>Post Title: <%= @post.title %></h1>
+<p>Post Body: <%= @post.body %></p>
+<p><strong>Comments:</strong></p>
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li><strong><%= comment.name %></strong>: <%= comment.body %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to 'Back to Posts', posts_path %>

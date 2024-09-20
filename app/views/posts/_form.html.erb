@@ -1,0 +1,21 @@
+<%= form_with(model: @post, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, class: "form-control" %>
+  </div>
+  <br/>
+
+  <div class="actions">
+    <% if current_action == "edit" %>
+      <%= form.button 'Update Post', class: 'btn btn-primary' %>
+    <% else %>
+      <%= form.button 'Create Post', class: 'btn btn-primary' %>
+    <% end %>
+    <%= link_to 'Back', posts_path, class: 'btn btn-primary' %>
+  </div>
+<% end %>
